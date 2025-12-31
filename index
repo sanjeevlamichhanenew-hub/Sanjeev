@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Academic Excellence | Premier Higher Education</title>
+    <meta name="description" content="University of Academic Excellence - A premier institution for higher education, research, and innovation. Offering undergraduate, graduate, and doctoral programs.">
+    <meta name="keywords" content="university, higher education, academic programs, research, undergraduate, graduate, doctoral">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://picsum.photos/32?random=999">
+</head>
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-banner">
+        <div class="cookie-content">
+            <p>This website uses cookies to enhance your browsing experience. By continuing to use this site, you consent to our use of cookies.</p>
+            <div class="cookie-buttons">
+                <button id="acceptCookies" class="cookie-btn accept">Accept</button>
+                <button id="declineCookies" class="cookie-btn decline">Decline</button>
+                <a href="/privacy" class="cookie-link">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                        <span><i class="fas fa-envelope"></i> info@university.edu</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="logo">
+                        <a href="#" class="logo-link">
+                            <img src="https://picsum.photos/60?random=100" alt="University Logo" class="logo-img">
+                            <div class="logo-text">
+                                <h1 class="university-name">University of Academic Excellence</h1>
+                                <p class="university-tagline">Knowledge • Innovation • Excellence</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <div class="nav-menu" id="navMenu">
+                        <ul class="nav-list">
+                            <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                            <li class="nav-item dropdown">
+                                <a href="#academics" class="nav-link">Academics <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-menu">
+                                    <a href="#undergraduate">Undergraduate Programs</a>
+                                    <a href="#graduate">Graduate Programs</a>
+                                    <a href="#doctoral">Doctoral Programs</a>
+                                    <a href="#online">Online Learning</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
+                            <li class="nav-item"><a href="#admissions" class="nav-link">Admissions</a></li>
+                            <li class="nav-item"><a href="#campus" class="nav-link">Campus Life</a></li>
+                            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-actions">
+                        <button class="btn btn-primary" id="applyNowBtn">Apply Now</button>
+                        <button class="btn btn-secondary" id="searchBtn" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <button class="close-search" id="closeSearch" aria-label="Close search">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search courses, faculty, research..." class="search-input">
+                <button class="search-submit" id="searchSubmit">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-slider">
+                <div class="slide active">
+                    <img src="https://picsum.photos/1920/800?random=1" alt="University campus with students walking" class="hero-image" loading="lazy">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h2 class="hero-title">Shaping Future Leaders</h2>
+                        <p class="hero-subtitle">Join a community of innovators, thinkers, and change-makers</p>
+                        <div class="hero-buttons">
+                            <a href="#admissions" class="btn btn-hero-primary">Explore Programs</a>
+                            <a href="#campus" class="btn btn-hero-secondary">Virtual Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="quick-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="15000">0</div>
+                        <div class="stat-label">Students</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="1200">0</div>
+                        <div class="stat-label">Faculty Members</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="85">0</div>
+                        <div class="stat-label">Academic Programs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-label">Research Centers</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Our University</h2>
+                    <p class="section-subtitle">A Legacy of Academic Excellence Since 1890</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>The University of Academic Excellence is a premier institution dedicated to advancing knowledge and preparing students for leadership roles in a rapidly changing world. Our commitment to academic rigor, innovative research, and community engagement has established us as a leader in higher education.</p>
+                        <p>With state-of-the-art facilities, distinguished faculty, and a diverse student body, we provide an environment where intellectual curiosity thrives and innovation flourishes.</p>
+                        <a href="#about-more" class="btn btn-outline">Learn More About Us</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://picsum.photos/600/400?random=2" alt="Historic university building" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academics Section -->
+        <section id="academics" class="section academics-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Academic Programs</h2>
+                    <p class="section-subtitle">Explore Our Diverse Range of Programs</p>
+                </div>
+                <div class="programs-grid" id="programsGrid">
+                    <!-- Programs will be loaded via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Highlights -->
+        <section id="research" class="section research-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Research & Innovation</h2>
+                    <p class="section-subtitle">Pushing the Boundaries of Knowledge</p>
+                </div>
+                <div class="research-highlights">
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Scientific Discovery</h3>
+                        <p>Cutting-edge research in biotechnology, nanotechnology, and environmental sciences.</p>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Technology Innovation</h3>
+                        <p>Advancements in artificial intelligence, cybersecurity, and software engineering.</p>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Medical Research</h3>
+                        <p>Groundbreaking work in medical sciences, public health, and healthcare innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus Life -->
+        <section id="campus" class="section campus-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Campus Life</h2>
+                    <p class="section-subtitle">Experience Vibrant University Life</p>
+                </div>
+                <div class="campus-gallery">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Student activities on campus" loading="lazy">
+                        <div class="gallery-caption">Student Activities</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/400/300?random=4" alt="Sports facilities" loading="lazy">
+                        <div class="gallery-caption">Athletics & Sports</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/400/300?random=5" alt="Library and study spaces" loading="lazy">
+                        <div class="gallery-caption">Learning Spaces</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="section events-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <p class="section-subtitle">Join Our Campus Community</p>
+                </div>
+                <div class="events-list" id="eventsList">
+                    <!-- Events will be loaded via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter for the latest news, events, and program updates.</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="newsletterConsent" required>
+                            <label for="newsletterConsent">I agree to receive email updates from the university</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3>University of Academic Excellence</h3>
+                        <p>123 University Avenue<br>Academic City, AC 12345<br>United States</p>
+                        <div class="contact-info-footer">
+                            <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                            <p><i class="fas fa-envelope"></i> info@university.edu</p>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#academics">Academic Programs</a></li>
+                            <li><a href="#admissions">Admissions</a></li>
+                            <li><a href="#research">Research</a></li>
+                            <li><a href="#campus">Campus Life</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#library">Library</a></li>
+                            <li><a href="#careers">Career Services</a></li>
+                            <li><a href="#alumni">Alumni Network</a></li>
+                            <li><a href="#giving">Giving</a></li>
+                            <li><a href="#emergency">Emergency Information</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect With Us</h4>
+                        <div class="social-footer">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                        <div class="app-links">
+                            <a href="#" class="app-link">
+                                <i class="fas fa-mobile-alt"></i> Mobile App
+                            </a>
+                            <a href="#" class="app-link">
+                                <i class="fas fa-calendar-alt"></i> Campus Events
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 University of Academic Excellence. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Use</a>
+                        <a href="#accessibility">Accessibility</a>
+                        <a href="#sitemap">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Application Modal -->
+    <div class="modal" id="applicationModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2>Start Your Application</h2>
+            <form id="applicationForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Program</option>
+                        <option value="undergraduate">Undergraduate</option>
+                        <option value="graduate">Graduate</option>
+                        <option value="doctoral">Doctoral</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
