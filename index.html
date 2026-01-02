@@ -435,13 +435,15 @@
                     </div>
                 </div>
 
+
+
                 
                 
-             <div data-aos="fade-left">
+         <div data-aos="fade-left">
     <h3 class="text-xl font-semibold text-gray-800 mb-6">Send Me a Message</h3>
 
     <!-- Web3Forms Integrated Form -->
-    <form class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+    <form id="contactForm" class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
         <!-- Web3Forms access key -->
         <input type="hidden" name="access_key" value="8a277211-f30a-4a33-b478-68cca48d47ff">
 
@@ -475,9 +477,48 @@
             Send Message
             <i data-feather="send" class="inline ml-2 w-4 h-4"></i>
         </button>
+
+        <!-- Notification Message -->
+        <p id="formMessage" class="mt-4 text-center font-medium hidden"></p>
     </form>
 </div>
 
+<!-- JS to handle form submission and notifications -->
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const form = e.target;
+    const formMessage = document.getElementById('formMessage');
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData
+        });
+
+        if (response.ok) {
+            formMessage.textContent = "✅ Message sent successfully!";
+            formMessage.className = "mt-4 text-center font-medium text-green-600";
+            form.reset(); // Clear form fields
+        } else {
+            throw new Error("Failed to send message.");
+        }
+    } catch (error) {
+        formMessage.textContent = "❌ Oops! Something went wrong.";
+        formMessage.className = "mt-4 text-center font-medium text-red-600";
+    }
+
+    formMessage.classList.remove('hidden'); // Show the message
+});
+</script>
+
+
+
+
+                
             </div>
         </div>
     </section>
