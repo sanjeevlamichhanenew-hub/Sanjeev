@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bamboo Project Report</title>
+    <style>
+        /* Simple, clean styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f8f9fa;
+        }
+        
+        .header {
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2ecc71;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: #95a5a6;
+            margin-top: 15px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Content sections */
+        .section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .section-text {
+            color: #34495e;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        /* Media items */
+        .media-item {
+            margin: 40px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .media-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .media-content {
+            width: 100%;
+        }
+        
+        .media-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .media-content video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .caption {
+            padding: 20px;
+            background: white;
+        }
+        
+        .caption-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .caption-text {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* Comment section */
+        .comments-section {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 2px solid #ecf0f1;
+        }
+        
+        .comment-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #2ecc71;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #2ecc71;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #27ae60;
+        }
+        
+        /* Comments display */
+        .comments-list {
+            margin-top: 40px;
+        }
+        
+        .comment {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+            border-left: 3px solid #2ecc71;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .comment-date {
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        
+        .comment-text {
+            color: #34495e;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            color: #2ecc71;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .comment-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Bamboo Structural Project</h1>
+        <p class="subtitle">Design, fabrication, and testing report</p>
+        <div class="meta">
+            <div class="meta-item">📅 June 2023</div>
+            <div class="meta-item">👥 Team of 5</div>
+            <div class="meta-item">📍 University Lab</div>
+        </div>
+    </header>
+
+    <!-- Introduction -->
+    <section class="section">
+        <h2 class="section-title">Project Overview</h2>
+        <p class="section-text">
+            This report documents the complete process of designing, fabricating, and testing bamboo structural components. 
+            The project focused on developing sustainable construction methods using computational design and digital fabrication.
+        </p>
+    </section>
+
+    <!-- Design Phase -->
+    <section class="section">
+        <h2 class="section-title">1. Design Phase</h2>
+        <p class="section-text">
+            Initial design work involved parametric modeling and structural analysis to optimize the bamboo components.
+        </p>
+        
+        <!-- Image 1 -->
+        <div class="media-item">
+            <div class="media-content">
+                <img src="https://images.unsplash.com/photo-1590650213165-c1f7771f4d73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Parametric design model">
+            </div>
+            <div class="caption">
+                <div class="caption-title">Fig. 1: Parametric Design Model</div>
+                <p class="caption-text">Computational design using Grasshopper to generate optimized joint geometry based on material constraints.</p>
+            </div>
+        </div>
+        
+        <!-- Video 1 -->
+        <div class="media-item">
+            <div class="media-content">
+                <video controls poster="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="caption">
+                <div class="caption-title">Video 1: Design Iteration Process</div>
+                <p class="caption-text">Timelapse showing the evolution of design concepts through multiple iterations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fabrication Phase -->
+    <section class="section">
+        <h2 class="section-title">2. Fabrication Phase</h2>
+        <p class="section-text">
+            Digital fabrication using CNC routers and manual assembly techniques.
+        </p>
+        
+        <!-- Image 2 -->
+        <div class="media-item">
+            <div class="media-content">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                     alt="CNC fabrication">
+            </div>
+            <div class="caption">
+                <div class="caption-title">Fig. 2: CNC Fabrication</div>
+                <p class="caption-text">5-axis CNC router cutting bamboo components with custom toolpaths to prevent splitting.</p>
+            </div>
+        </div>
+        
+        <!-- Image 3 -->
+        <div class="media-item">
+            <div class="media-content">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Assembly process">
+            </div>
+            <div class="caption">
+                <div class="caption-title">Fig. 3: Component Assembly</div>
+                <p class="caption-text">Manual assembly of CNC-milled parts using friction-fit joinery without adhesives.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testing Phase -->
+    <section class="section">
+        <h2 class="section-title">3. Testing Phase</h2>
+        <p class="section-text">
+            Structural testing and performance evaluation of completed assemblies.
+        </p>
+        
+        <!-- Image 4 -->
+        <div class="media-item">
+            <div class="media-content">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Structural testing">
+            </div>
+            <div class="caption">
+                <div class="caption-title">Fig. 4: Compression Testing</div>
+                <p class="caption-text">Universal testing machine applying compressive loads to evaluate joint performance.</p>
+            </div>
+        </div>
+        
+        <!-- Video 2 -->
+        <div class="media-item">
+            <div class="media-content">
+                <video controls poster="https://images.unsplash.com/photo-1590650213165-c1f7771f4d73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="caption">
+                <div class="caption-title">Video 2: Flexural Testing</div>
+                <p class="caption-text">Three-point bending test showing deformation behavior at 75% of ultimate load.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <h2 class="section-title">Discussion & Comments</h2>
+        
+        <!-- Comment Form -->
+        <div class="comment-form">
+            <form id="commentForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="comment">Comment</label>
+                    <textarea id="comment" placeholder="Share your thoughts, questions, or feedback..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Post Comment</button>
+            </form>
+        </div>
+        
+        <!-- Existing Comments -->
+        <div class="comments-list" id="commentsList">
+            <div class="comment">
+                <div class="comment-header">
+                    <div class="comment-author">Dr. Sarah Chen</div>
+                    <div class="comment-date">October 15, 2023</div>
+                </div>
+                <p class="comment-text">
+                    Interesting approach to joinery design. How did you account for bamboo's anisotropic properties in your calculations?
+                </p>
+            </div>
+            
+            <div class="comment">
+                <div class="comment-header">
+                    <div class="comment-author">Michael Rodriguez</div>
+                    <div class="comment-date">October 10, 2023</div>
+                </div>
+                <p class="comment-text">
+                    The parametric modeling workflow looks efficient. Are the Grasshopper scripts available for other researchers?
+                </p>
+            </div>
+            
+            <div class="comment">
+                <div class="comment-header">
+                    <div class="comment-author">Alex Park</div>
+                    <div class="comment-date">October 5, 2023</div>
+                </div>
+                <p class="comment-text">
+                    Great work on sustainable construction methods. The testing results show promising improvements over traditional techniques.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Bamboo Structural Project Report</p>
+        <p>© 2023 Project Team | This page opens in a new tab</p>
+        <a href="javascript:window.close()" class="back-btn">← Close and return to portfolio</a>
+    </footer>
+
+    <script>
+        // Comment form submission
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value || 'Anonymous';
+            const commentText = document.getElementById('comment').value;
+            
+            if (!commentText.trim()) return;
+            
+            // Create new comment element
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.innerHTML = `
+                <div class="comment-header">
+                    <div class="comment-author">${name}</div>
+                    <div class="comment-date">${new Date().toLocaleDateString()}</div>
+                </div>
+                <p class="comment-text">${commentText}</p>
+            `;
+            
+            // Add to top of comments list
+            const commentsList = document.getElementById('commentsList');
+            commentsList.insertBefore(commentDiv, commentsList.firstChild);
+            
+            // Clear form
+            document.getElementById('comment').value = '';
+            document.getElementById('name').value = '';
+            
+            // Scroll to new comment
+            commentDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Close page when clicking back link
+        document.querySelector('.back-btn').addEventListener('click', function() {
+            window.close();
+        });
+    </script>
+</body>
+</html>
